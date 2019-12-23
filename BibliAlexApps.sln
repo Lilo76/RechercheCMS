@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Recherche_CMS", "BibliAlexApp\Recherche_CMS.vbproj", "{57E30BC4-4412-460B-8D52-4BE5CDA350CB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CSVtoMYSQL", "WindowsApp1\CSVtoMYSQL.vbproj", "{86F98AFE-3FF3-46DF-B882-1719700B4DF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57E30BC4-4412-460B-8D52-4BE5CDA350CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E30BC4-4412-460B-8D52-4BE5CDA350CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E30BC4-4412-460B-8D52-4BE5CDA350CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E30BC4-4412-460B-8D52-4BE5CDA350CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F98AFE-3FF3-46DF-B882-1719700B4DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F98AFE-3FF3-46DF-B882-1719700B4DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F98AFE-3FF3-46DF-B882-1719700B4DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F98AFE-3FF3-46DF-B882-1719700B4DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48C0F0D0-5C8F-4968-AFBC-770EA4FFFEDD}
+	EndGlobalSection
+EndGlobal
