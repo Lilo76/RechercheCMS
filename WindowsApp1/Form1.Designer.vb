@@ -203,7 +203,7 @@ Partial Class Form1
         '
         'Btn_CreateUpdate2
         '
-        Me.Btn_CreateUpdate2.Location = New System.Drawing.Point(578, 33)
+        Me.Btn_CreateUpdate2.Location = New System.Drawing.Point(351, 33)
         Me.Btn_CreateUpdate2.Name = "Btn_CreateUpdate2"
         Me.Btn_CreateUpdate2.Size = New System.Drawing.Size(112, 23)
         Me.Btn_CreateUpdate2.TabIndex = 6
