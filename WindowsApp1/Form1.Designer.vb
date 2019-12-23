@@ -42,7 +42,7 @@ Partial Class Form1
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.btnCreateTbl = New System.Windows.Forms.Button()
         Me.txt_nomTable = New System.Windows.Forms.TextBox()
-        Me.Btn_CreateUpdate = New System.Windows.Forms.Button()
+        Me.Btn_CreateUpdate2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -201,21 +201,21 @@ Partial Class Form1
         Me.txt_nomTable.Size = New System.Drawing.Size(100, 20)
         Me.txt_nomTable.TabIndex = 5
         '
-        'Btn_CreateUpdate
+        'Btn_CreateUpdate2
         '
-        Me.Btn_CreateUpdate.Location = New System.Drawing.Point(581, 12)
-        Me.Btn_CreateUpdate.Name = "Btn_CreateUpdate"
-        Me.Btn_CreateUpdate.Size = New System.Drawing.Size(112, 23)
-        Me.Btn_CreateUpdate.TabIndex = 0
-        Me.Btn_CreateUpdate.Text = "Création de la table"
-        Me.Btn_CreateUpdate.UseVisualStyleBackColor = True
+        Me.Btn_CreateUpdate2.Location = New System.Drawing.Point(578, 33)
+        Me.Btn_CreateUpdate2.Name = "Btn_CreateUpdate2"
+        Me.Btn_CreateUpdate2.Size = New System.Drawing.Size(112, 23)
+        Me.Btn_CreateUpdate2.TabIndex = 6
+        Me.Btn_CreateUpdate2.Text = "Création de la table"
+        Me.Btn_CreateUpdate2.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(871, 450)
-        Me.Controls.Add(Me.Btn_CreateUpdate)
+        Me.Controls.Add(Me.Btn_CreateUpdate2)
         Me.Controls.Add(Me.txt_nomTable)
         Me.Controls.Add(Me.btnCreateTbl)
         Me.Controls.Add(Me.TxtBox_Dir)
@@ -249,5 +249,5 @@ Partial Class Form1
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnCreateTbl As Button
     Friend WithEvents txt_nomTable As TextBox
-    Friend WithEvents Btn_CreateUpdate As Button
+    Friend WithEvents Btn_CreateUpdate2 As Button
 End Class
