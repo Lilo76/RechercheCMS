@@ -5,7 +5,6 @@ Imports MySql.Data.MySqlClient
 Public Class Form1
     Private Sub Btn_page_import_Click(sender As Object, e As EventArgs) Handles Btn_page_import.Click
         Dim selectedFile As String = String.Empty
-        ' Pour afficher l'OpenFileDialog
         OpenFileDialog1.Title = "Choisissez "
         OpenFileDialog1.Filter = "csv|*.csv"
         OpenFileDialog1.FilterIndex = 1
@@ -18,18 +17,13 @@ Public Class Form1
         If (selectedFile IsNot Nothing) Then
             TxtBox_Dir.Text = selectedFile
         End If
+
         Dim dt As New DataTable
         Dim SR As StreamReader = File.OpenText(TxtBox_Dir.Text) '
         Dim newline() As String = SR.ReadLine.Split(";")
-        'Controls.Add(DataGridView1)
 
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        ' Me.DataGridView1.Columns.AddRange({Me.IdDataGridViewTextBoxColumn, Me.MachDataGridViewTextBoxColumn, Me.PosDataGridViewTextBoxColumn, Me.PartDataGridViewTextBoxColumn, Me.NumDataGridViewTextBoxColumn, Me.FeederDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.WithsDataGridViewTextBoxColumn, Me.FeedDataGridViewTextBoxColumn, Me.PitchDataGridViewTextBoxColumn, Me.NbPartDataGridViewTextBoxColumn, Me.HeightDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.QtyDataGridViewTextBoxColumn, Me.TrayDataGridViewTextBoxColumn, Me.DirDataGridViewTextBoxColumn, Me.ImageDataGridViewTextBoxColumn})
-        ' Me.DataGridView1.Location = New System.Drawing.Point(12, 41)
-        '  Me.DataGridView1.Name = "DataGridView1"
-        '  Me.DataGridView1.Size = New System.Drawing.Size(1011, 436)
-        ' Me.DataGridView1.TabIndex = 0
-        Controls.Add(DataGridView1)
+        '   Controls.Add(DataGridView1)
 
         dt.Columns.AddRange({New DataColumn(newline(0)), New DataColumn(newline(1)), New DataColumn(newline(2)), New DataColumn(newline(3)),
                             New DataColumn(newline(4)), New DataColumn(newline(5)), New DataColumn(newline(6)), New DataColumn(newline(7)),
@@ -43,10 +37,7 @@ Public Class Form1
             dt.Rows.Add(newrow)
         End While
         DataGridView1.DataSource = dt
-        '   DataGridView1.Columns(0).Width = 45
-        '  DataGridView1.Columns(1).Width = 35
-        '  DataGridView1.Columns(2).Width = 35
-        ' DataGridView1.Columns(3).Width = 80
+
     End Sub
 
 
@@ -55,15 +46,6 @@ Public Class Form1
         Dim objCon As New MySqlConnection(conStr)
         Dim obj As MySqlCommand
         Dim strSQL As String
-
-        ' Create the database
-        '   objCon.Open()                                               
-        '    obj = objCon.CreateCommand()
-        '  strSQL = "CREATE TABLE People"
-        ' Execute
-        '   obj.CommandText = strSQL
-        '    obj.ExecuteNonQuery()
-        ' Create a table
 
         conStr = "server=127.0.0.1;user id=root;database=prod"
         objCon = New MySqlConnection(conStr)
@@ -89,10 +71,9 @@ Public Class Form1
 
         For index As Integer = 0 To DataGridView1.RowCount - 2
 
+            Dim nomtable As String = txt_nomTable.Text
             Dim connectionString = "server=127.0.0.1;user id=root;database=prod"
-            Dim query0 = "insert into basecms(Id,Mach,Pos,Part,Num,Feeder,Type,Width,Feed,Pitch,NbPart,Height,Status,Qty) values(@Id,@Mach,@Pos,@Part,@Num,@Feeder,@Type,@Width,@Feed,@Pitch,@NbPart,@Height,@Status,@Qty)"
-
-
+            Dim query0 = "insert into " & nomtable & "(Id,Mach,Pos,Part,Num,Feeder,Type,Width,Feed,Pitch,NbPart,Height,Status,Qty) values(@Id,@Mach,@Pos,@Part,@Num,@Feeder,@Type,@Width,@Feed,@Pitch,@NbPart,@Height,@Status,@Qty)"
             Dim connection0 As New MySqlConnection(connectionString)
             Dim command0 As New MySqlCommand(query0, connection0)
 
