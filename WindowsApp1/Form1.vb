@@ -47,7 +47,7 @@ Public Class Form1
         Dim obj As MySqlCommand
         Dim strSQL As String
 
-        conStr = "server=127.0.0.1;user id=root;database=prod"
+     '   conStr = "server=127.0.0.1;user id=root;database=prod"
         objCon = New MySqlConnection(conStr)
         objCon.Open()
         obj = objCon.CreateCommand()
@@ -77,6 +77,60 @@ Public Class Form1
             Dim connection0 As New MySqlConnection(connectionString)
             Dim command0 As New MySqlCommand(query0, connection0)
 
+
+            command0.Parameters.AddWithValue("@Id", DataGridView1.Rows(index).Cells(0).Value)
+            command0.Parameters.AddWithValue("@Mach", DataGridView1.Rows(index).Cells(1).Value)
+            command0.Parameters.AddWithValue("@Pos", DataGridView1.Rows(index).Cells(2).Value)
+            command0.Parameters.AddWithValue("@Part", DataGridView1.Rows(index).Cells(3).Value)
+            command0.Parameters.AddWithValue("@Num", DataGridView1.Rows(index).Cells(4).Value)
+            command0.Parameters.AddWithValue("@Feeder", DataGridView1.Rows(index).Cells(5).Value)
+            command0.Parameters.AddWithValue("@Type", DataGridView1.Rows(index).Cells(6).Value)
+            command0.Parameters.AddWithValue("@Width", DataGridView1.Rows(index).Cells(7).Value)
+            command0.Parameters.AddWithValue("@Feed", DataGridView1.Rows(index).Cells(8).Value)
+            command0.Parameters.AddWithValue("@Pitch", DataGridView1.Rows(index).Cells(9).Value)
+            command0.Parameters.AddWithValue("@NbPart", DataGridView1.Rows(index).Cells(10).Value)
+            command0.Parameters.AddWithValue("@Height", DataGridView1.Rows(index).Cells(11).Value)
+            command0.Parameters.AddWithValue("@Status", DataGridView1.Rows(index).Cells(12).Value)
+            command0.Parameters.AddWithValue("@Qty", DataGridView1.Rows(index).Cells(13).Value)
+
+            connection0.Open()
+            command0.Connection = connection0
+            command0.ExecuteNonQuery()
+
+        Next
+    End Sub
+
+
+    Private Sub btn_CreateAndCopy_Click(sender As Object, e As EventArgs) Handles btn_CreateAndCopy.Click
+
+        Dim conStr As String = "server=127.0.0.1;user id=root;database=prod"
+        Dim objCon As New MySqlConnection(conStr)
+        Dim obj As MySqlCommand
+        Dim nomtable As String = txt_nomTable.Text
+        Dim strSQL As String
+
+        objCon = New MySqlConnection(conStr)
+        objCon.Open()
+        obj = objCon.CreateCommand()
+        strSQL = "CREATE TABLE " & nomtable & " (id int(4) NOT NULL, mach VARCHAR (25), pos int(4), part int(4), num int(12), feeder VARCHAR (25), type VARCHAR (25), width int(4), feed VARCHAR (25), pitch VARCHAR (25), nbPart int(4), height VARCHAR (25), status VARCHAR (25), qty int(4))"
+        ' Execute
+        obj.CommandText = strSQL
+        Try
+            obj.ExecuteNonQuery()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+        objCon.Close()
+        objCon = Nothing
+
+
+        For index As Integer = 0 To DataGridView1.RowCount - 2
+
+            Dim connectionString = "server=127.0.0.1;user id=root;database=prod"
+            Dim query0 = "insert into " & nomtable & "(Id,Mach,Pos,Part,Num,Feeder,Type,Width,Feed,Pitch,NbPart,Height,Status,Qty) values(@Id,@Mach,@Pos,@Part,@Num,@Feeder,@Type,@Width,@Feed,@Pitch,@NbPart,@Height,@Status,@Qty)"
+            Dim connection0 As New MySqlConnection(connectionString)
+            Dim command0 As New MySqlCommand(query0, connection0)
 
             command0.Parameters.AddWithValue("@Id", DataGridView1.Rows(index).Cells(0).Value)
             command0.Parameters.AddWithValue("@Mach", DataGridView1.Rows(index).Cells(1).Value)

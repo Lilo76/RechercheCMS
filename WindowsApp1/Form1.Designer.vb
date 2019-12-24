@@ -43,6 +43,7 @@ Partial Class Form1
         Me.btnCreateTbl = New System.Windows.Forms.Button()
         Me.txt_nomTable = New System.Windows.Forms.TextBox()
         Me.Btn_CreateUpdate2 = New System.Windows.Forms.Button()
+        Me.btn_CreateAndCopy = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -187,7 +188,7 @@ Partial Class Form1
         '
         'btnCreateTbl
         '
-        Me.btnCreateTbl.Location = New System.Drawing.Point(351, 10)
+        Me.btnCreateTbl.Location = New System.Drawing.Point(762, 7)
         Me.btnCreateTbl.Name = "btnCreateTbl"
         Me.btnCreateTbl.Size = New System.Drawing.Size(75, 23)
         Me.btnCreateTbl.TabIndex = 4
@@ -196,25 +197,35 @@ Partial Class Form1
         '
         'txt_nomTable
         '
-        Me.txt_nomTable.Location = New System.Drawing.Point(432, 10)
+        Me.txt_nomTable.Location = New System.Drawing.Point(466, 15)
         Me.txt_nomTable.Name = "txt_nomTable"
         Me.txt_nomTable.Size = New System.Drawing.Size(100, 20)
         Me.txt_nomTable.TabIndex = 5
         '
         'Btn_CreateUpdate2
         '
-        Me.Btn_CreateUpdate2.Location = New System.Drawing.Point(351, 33)
+        Me.Btn_CreateUpdate2.Location = New System.Drawing.Point(747, 33)
         Me.Btn_CreateUpdate2.Name = "Btn_CreateUpdate2"
         Me.Btn_CreateUpdate2.Size = New System.Drawing.Size(112, 23)
         Me.Btn_CreateUpdate2.TabIndex = 6
         Me.Btn_CreateUpdate2.Text = "Création de la table"
         Me.Btn_CreateUpdate2.UseVisualStyleBackColor = True
         '
+        'btn_CreateAndCopy
+        '
+        Me.btn_CreateAndCopy.Location = New System.Drawing.Point(365, 13)
+        Me.btn_CreateAndCopy.Name = "btn_CreateAndCopy"
+        Me.btn_CreateAndCopy.Size = New System.Drawing.Size(95, 23)
+        Me.btn_CreateAndCopy.TabIndex = 7
+        Me.btn_CreateAndCopy.Text = "Create And Copy"
+        Me.btn_CreateAndCopy.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(871, 450)
+        Me.Controls.Add(Me.btn_CreateAndCopy)
         Me.Controls.Add(Me.Btn_CreateUpdate2)
         Me.Controls.Add(Me.txt_nomTable)
         Me.Controls.Add(Me.btnCreateTbl)
@@ -250,4 +261,5 @@ Partial Class Form1
     Friend WithEvents btnCreateTbl As Button
     Friend WithEvents txt_nomTable As TextBox
     Friend WithEvents Btn_CreateUpdate2 As Button
+    Friend WithEvents btn_CreateAndCopy As Button
 End Class
