@@ -37,13 +37,8 @@ Partial Class Form1
         Me.HeightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.QtyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Btn_page_import = New System.Windows.Forms.Button()
-        Me.TxtBox_Dir = New System.Windows.Forms.TextBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.btnCreateTbl = New System.Windows.Forms.Button()
+        Me.btn_Import = New System.Windows.Forms.Button()
         Me.txt_nomTable = New System.Windows.Forms.TextBox()
-        Me.Btn_CreateUpdate2 = New System.Windows.Forms.Button()
-        Me.btn_CreateAndCopy = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,10 +46,10 @@ Partial Class Form1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.MachDataGridViewTextBoxColumn, Me.PosDataGridViewTextBoxColumn, Me.PartDataGridViewTextBoxColumn, Me.NumDataGridViewTextBoxColumn, Me.FeederDataGridViewTextBoxColumn, Me.TypeDataGridViewTextBoxColumn, Me.WidthDataGridViewTextBoxColumn, Me.FeedDataGridViewTextBoxColumn, Me.PitchDataGridViewTextBoxColumn, Me.NbPartDataGridViewTextBoxColumn, Me.HeightDataGridViewTextBoxColumn, Me.StatusDataGridViewTextBoxColumn, Me.QtyDataGridViewTextBoxColumn})
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 62)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 47)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(852, 338)
-        Me.DataGridView1.TabIndex = 1
+        Me.DataGridView1.TabIndex = 2
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -166,71 +161,29 @@ Partial Class Form1
         Me.QtyDataGridViewTextBoxColumn.Name = "QtyDataGridViewTextBoxColumn"
         Me.QtyDataGridViewTextBoxColumn.Width = 46
         '
-        'Btn_page_import
+        'btn_Import
         '
-        Me.Btn_page_import.Location = New System.Drawing.Point(13, 13)
-        Me.Btn_page_import.Name = "Btn_page_import"
-        Me.Btn_page_import.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_page_import.TabIndex = 2
-        Me.Btn_page_import.Text = "Import"
-        Me.Btn_page_import.UseVisualStyleBackColor = True
-        '
-        'TxtBox_Dir
-        '
-        Me.TxtBox_Dir.Location = New System.Drawing.Point(95, 13)
-        Me.TxtBox_Dir.Name = "TxtBox_Dir"
-        Me.TxtBox_Dir.Size = New System.Drawing.Size(238, 20)
-        Me.TxtBox_Dir.TabIndex = 3
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'btnCreateTbl
-        '
-        Me.btnCreateTbl.Location = New System.Drawing.Point(762, 7)
-        Me.btnCreateTbl.Name = "btnCreateTbl"
-        Me.btnCreateTbl.Size = New System.Drawing.Size(75, 23)
-        Me.btnCreateTbl.TabIndex = 4
-        Me.btnCreateTbl.Text = "Créer Table"
-        Me.btnCreateTbl.UseVisualStyleBackColor = True
+        Me.btn_Import.Location = New System.Drawing.Point(12, 13)
+        Me.btn_Import.Name = "btn_Import"
+        Me.btn_Import.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Import.TabIndex = 3
+        Me.btn_Import.Text = "Button1"
+        Me.btn_Import.UseVisualStyleBackColor = True
         '
         'txt_nomTable
         '
-        Me.txt_nomTable.Location = New System.Drawing.Point(466, 15)
+        Me.txt_nomTable.Location = New System.Drawing.Point(112, 15)
         Me.txt_nomTable.Name = "txt_nomTable"
-        Me.txt_nomTable.Size = New System.Drawing.Size(100, 20)
-        Me.txt_nomTable.TabIndex = 5
-        '
-        'Btn_CreateUpdate2
-        '
-        Me.Btn_CreateUpdate2.Location = New System.Drawing.Point(747, 33)
-        Me.Btn_CreateUpdate2.Name = "Btn_CreateUpdate2"
-        Me.Btn_CreateUpdate2.Size = New System.Drawing.Size(112, 23)
-        Me.Btn_CreateUpdate2.TabIndex = 6
-        Me.Btn_CreateUpdate2.Text = "Création de la table"
-        Me.Btn_CreateUpdate2.UseVisualStyleBackColor = True
-        '
-        'btn_CreateAndCopy
-        '
-        Me.btn_CreateAndCopy.Location = New System.Drawing.Point(365, 13)
-        Me.btn_CreateAndCopy.Name = "btn_CreateAndCopy"
-        Me.btn_CreateAndCopy.Size = New System.Drawing.Size(95, 23)
-        Me.btn_CreateAndCopy.TabIndex = 7
-        Me.btn_CreateAndCopy.Text = "Create And Copy"
-        Me.btn_CreateAndCopy.UseVisualStyleBackColor = True
+        Me.txt_nomTable.Size = New System.Drawing.Size(137, 20)
+        Me.txt_nomTable.TabIndex = 4
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(875, 406)
-        Me.Controls.Add(Me.btn_CreateAndCopy)
-        Me.Controls.Add(Me.Btn_CreateUpdate2)
+        Me.ClientSize = New System.Drawing.Size(876, 450)
         Me.Controls.Add(Me.txt_nomTable)
-        Me.Controls.Add(Me.btnCreateTbl)
-        Me.Controls.Add(Me.TxtBox_Dir)
-        Me.Controls.Add(Me.Btn_page_import)
+        Me.Controls.Add(Me.btn_Import)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -255,11 +208,6 @@ Partial Class Form1
     Friend WithEvents HeightDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents QtyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Btn_page_import As Button
-    Friend WithEvents TxtBox_Dir As TextBox
-    Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents btnCreateTbl As Button
+    Friend WithEvents btn_Import As Button
     Friend WithEvents txt_nomTable As TextBox
-    Friend WithEvents Btn_CreateUpdate2 As Button
-    Friend WithEvents btn_CreateAndCopy As Button
 End Class
